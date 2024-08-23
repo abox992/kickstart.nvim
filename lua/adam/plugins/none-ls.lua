@@ -2,7 +2,7 @@ return {
     'nvimtools/none-ls.nvim',
     dependencies = {
         'nvim-lua/plenary.nvim',
-        'nvimtools/none-ls-extras.nvim'
+        'nvimtools/none-ls-extras.nvim',
     },
     config = function()
         local null_ls = require 'null-ls'
@@ -20,7 +20,7 @@ return {
         }
 
         vim.keymap.set('n', '<leader>f', function()
-            vim.lsp.buf.format { tabSize = 4 }
+            vim.lsp.buf.format { formatting_options = { tabsize = 4 } }
         end, { desc = '[F]ormat' })
     end,
 }
