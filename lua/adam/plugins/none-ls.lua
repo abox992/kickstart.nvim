@@ -12,10 +12,7 @@ return {
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.completion.spell,
                 null_ls.builtins.formatting.prettierd,
-
-                -- null_ls.builtins.formatting.prettier,
-                null_ls.builtins.diagnostics.eslint_d,
-                -- require("none-ls.diagnostics.eslint")
+                require("none-ls.diagnostics.eslint_d"),
             },
         }
 
