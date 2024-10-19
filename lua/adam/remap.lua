@@ -36,7 +36,14 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- toggle showing whitespace characters
-vim.keymap.set('n', '<leader>tw', ":set list!<CR>", { desc = "[T]oggle [W]hitespace" })
+vim.keymap.set('n', '<leader>tw', ':set list!<CR>', { desc = '[T]oggle [W]hitespace' })
 
 -- disable Q
 vim.keymap.set('', 'Q', '<nop>')
+
+-- shortcut for opening netrw
+vim.keymap.set('n', '<leader>pv', ':Ex<CR>', { desc = 'Exit to netrw' })
+
+-- align cursor to middle of the screen when moving by page
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true })
