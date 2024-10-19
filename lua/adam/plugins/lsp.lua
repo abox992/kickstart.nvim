@@ -13,23 +13,30 @@ return {
 				'clangd',
 				'ts_ls',
                 'eslint',
-			},
-			handlers = {
-				function(server_name)
-					require('lspconfig')[server_name].setup {}
-				end,
-			},
-		}
+            },
+            handlers = {
+                function(server_name)
+                    require('lspconfig')[server_name].setup {}
+                end,
+            },
+        }
 
-		require('lspconfig').lua_ls.setup {
-			-- ... other configs
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { 'vim' },
-					},
-				},
-			},
-		}
-	end,
+        require('lspconfig').lua_ls.setup {
+            -- ... other configs
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { 'vim' },
+                    },
+                },
+            },
+        }
+
+        require('lspconfig').clangd.setup {
+            cmd = {
+                'clangd',
+                '--fallback-style=WebKit',
+            },
+        }
+    end,
 }
