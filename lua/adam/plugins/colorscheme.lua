@@ -1,12 +1,12 @@
 return {
-	"rose-pine/neovim",
-    name = "rose-pine",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-	init = function()
-		vim.cmd.colorscheme 'rose-pine'
-	end,
+    'AlexvZyl/nordic.nvim',
+    name = "nordic",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    init = function()
+        vim.cmd.colorscheme 'nordic'
+    end,
 }
 
 -- return {
