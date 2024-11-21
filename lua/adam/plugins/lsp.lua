@@ -1,10 +1,9 @@
 return {
-
     'neovim/nvim-lspconfig',
     dependencies = {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-        "j-hui/fidget.nvim",
+        'j-hui/fidget.nvim',
     },
     config = function()
         require('mason').setup()
@@ -39,10 +38,8 @@ return {
             },
         }
 
-        vim.diagnostic.config({
+        vim.diagnostic.config {
             update_in_insert = true,
-        })
-
-        require('fidget').setup({})
+        }
     end,
 }
