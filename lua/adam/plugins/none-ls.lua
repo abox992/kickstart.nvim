@@ -10,10 +10,16 @@ return {
         null_ls.setup {
             sources = {
                 null_ls.builtins.formatting.stylua,
-                -- null_ls.builtins.completion.spell,
-                null_ls.builtins.formatting.prettierd,
-                -- require("none-ls.diagnostics.eslint_d"),
-            },
+                null_ls.builtins.formatting.prettier.with({
+                    extra_args = function(params)
+                        return params.options
+                            and params.options.tabSize
+                            and {
+                                "--tab-width",
+                                params.options.tabSize,
+                            }
+                    end,
+                }), },
         }
 
         vim.keymap.set('n', '<leader>f', function()
